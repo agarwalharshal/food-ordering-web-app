@@ -1,0 +1,95 @@
+* {
+	margin: 0;
+	padding: 0;
+}
+body {
+	font-family: "Ubuntu", sans-serif;
+}
+.veg,
+.nonveg,
+.confirm {
+	height: 50px;
+	width: 50%;
+	font-size: large;
+	font-family: "Ubuntu", sans-serif;
+	font-weight: 400;
+	color: #fff;
+	border: none;
+}
+.veg {
+	background-color: #26de81;
+}
+.nonveg {
+	background-color: #fc5c65;
+}
+.menuItems {
+	margin: auto;
+	padding: 3% 12%;
+	flex-direction: column;
+}
+.eachItem {
+	background-color: #d1d8e0;
+	display: flex;
+	margin: 2% 0;
+	padding: 1.5% 2%;
+}
+.nameprice {
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	width: 90%;
+	margin-right: 10%;
+	padding-right: 5%;
+	font-family: "Montserrat", sans-serif;
+	border-right: solid 1px #a5b1c2;
+}
+.qty {
+	width: 10%;
+}
+.qty div {
+	display: flex;
+	margin: 20% 0 0;
+}
+.qty button {
+	border: solid #a5b1c2;
+	background-color: #a5b1c2;
+	height: 24px;
+	width: 24px;
+	font-size: 18px;
+}
+.qty p {
+	border: solid #a5b1c2;
+	height: 24px;
+	width: 24px;
+	box-sizing: border-box;
+	text-align: center;
+}
+
+.confirm,
+.place {
+	width: 100%;
+	font-size: larger;
+	background-color: #fd9644;
+}
+.confirm {
+	position: sticky;
+	bottom: 0;
+}
+.modal {
+	position: fixed;
+	top: "50%";
+	left: "50%";
+	transform: "translate(-50%, -50%)";
+	background-color: "#FFF";
+	padding: "50px";
+	z-index: 1000;
+}
+.overlay {
+	position: "fixed";
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+	background-color: "rgba(0, 0, 0, .7)";
+	z-index: 1000;
+}
