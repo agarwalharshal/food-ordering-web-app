@@ -27,18 +27,7 @@ function ConfirmOrder(props) {
 							<th>Price</th>
 						</tr>
 
-						<tr>
-							<td>Alfreds Futterkiste</td>
-							<td>Maria Anders</td>
-							<td>Germany</td>
-							<td>Germany</td>
-						</tr>
-						<tr>
-							<td>Centro comercial Moctezuma</td>
-							<td>Francisco Chang</td>
-							<td>Germany</td>
-							<td>Mexico</td>
-						</tr>
+						<tr>{/* ordered dishes component */}</tr>
 					</table>
 				</div>
 				<button
