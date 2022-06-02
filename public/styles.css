@@ -94,5 +94,11 @@ body {
 	z-index: 1000;
 }
 .modalContent {
-	padding: 3%;
+	padding: 50px;
+}
+table {
+	margin: 50px;
+}
+th {
+	padding: 0 50px;
 }
