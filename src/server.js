@@ -18,6 +18,19 @@ const dishSchema = new mongoose.Schema({
 
 const Dish = mongoose.model("Dish", dishSchema);
 
-app.get("/", function (req, res) {});
+const curdRice = new Dish({
+	ingredients: ["curd", "rice", "sugar"],
+	time: 15,
+});
+
+app.get("/", function (req, res) {
+	// Dish.insertOne(curdRice, function (err, result) {
+	// 	if (err) {
+	// 		console.log(err);
+	// 	} else {
+	// 		console.log("Inserted");
+	// 	}
+	// });
+});
 
 app.listen(3000, () => console.log("Server started on port 3000"));
