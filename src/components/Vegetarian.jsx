@@ -8,7 +8,12 @@ function Veg(props) {
 			{props.isGreen && (
 				<div className="menuItems">
 					{vdishes.map((item) => (
-						<MenuItem key={item.key} dish={item.dish} price={item.price} />
+						<MenuItem
+							key={item.key}
+							dish={item.dish}
+							price={item.price}
+							// qty={item.quantity}
+						/>
 					))}
 				</div>
 			)}
