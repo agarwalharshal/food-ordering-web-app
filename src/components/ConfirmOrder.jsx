@@ -2,9 +2,10 @@ import React, { useState } from "react";
 import ReactDOM from "react-dom";
 
 function ConfirmOrder(props) {
+	const { open, onClose, cartItems } = props;
 	const [isOver, setOver] = useState(false);
 
-	if (!props.open) {
+	if (!open) {
 		return null;
 	}
 	function handleOver() {
@@ -24,15 +25,28 @@ function ConfirmOrder(props) {
 							<th>S.No.</th>
 							<th>Dishes</th>
 							<th>Qty.</th>
-							<th>Price</th>
+							<th>Amount</th>
 						</tr>
-
-						<tr>{/* ordered dishes component */}</tr>
+						{cartItems.map((item, index) => (
+							<tr>
+								<td>{index + 1}</td>
+								<td>{item.dish}</td>
+								<td>{item.qty}</td>
+								<td>{item.price * item.qty}</td>
+							</tr>
+						))}
 					</table>
+					<p style={{ marginTop: "20px" }}>
+						Total Amount:{" "}
+						{cartItems.reduce(
+							(accumulator, item) => accumulator + item.qty * item.price,
+							0
+						)}
+					</p>
 				</div>
 				<button
 					className="place"
-					onClick={props.onClose}
+					onClick={onClose}
 					onMouseOver={handleOver}
 					onMouseOut={handleOut}
 					style={{ backgroundColor: isOver ? "#fa8231" : "#fd9644" }}

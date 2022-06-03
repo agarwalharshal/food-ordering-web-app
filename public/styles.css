@@ -18,10 +18,10 @@ body {
 	border: none;
 }
 .veg {
-	background-color: #26de81;
+	background-color: #16a085;
 }
 .nonveg {
-	background-color: #fc5c65;
+	background-color: #bd574e;
 }
 .menuItems {
 	margin: auto;
@@ -96,9 +96,13 @@ body {
 .modalContent {
 	padding: 50px;
 }
-table {
-	margin: 50px;
+.modalContent h1 {
+	margin-bottom: 25px;
 }
-th {
-	padding: 0 50px;
+.modalContent th {
+	text-align: left;
+	padding: 10px 10px;
+}
+.modalContent td {
+	padding: 3px 10px;
 }

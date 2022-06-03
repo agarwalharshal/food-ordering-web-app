@@ -4,6 +4,7 @@ import NonVeg from "./NonVegetarian";
 import ConfirmOrder from "./ConfirmOrder";
 
 function App() {
+	const [cartItems, setCartItems] = useState([]);
 	const [isGreen, setGreen] = useState(true);
 	const [isOver, setOver] = useState(false);
 	const [isOpen, setIsOpen] = useState(false);
@@ -22,6 +23,32 @@ function App() {
 	function handleOut() {
 		setOver(false);
 	}
+
+	const onAdd = (product) => {
+		const exist = cartItems.find((x) => x.key === product.key);
+		if (exist) {
+			setCartItems(
+				cartItems.map((x) =>
+					x.key === product.key ? { ...exist, qty: exist.qty + 1 } : x
+				)
+			);
+		} else {
+			setCartItems([...cartItems, { ...product, qty: 1 }]);
+		}
+	};
+	const onRemove = (product) => {
+		const exist = cartItems.find((x) => x.key === product.key);
+		if (exist.qty === 1) {
+			setCartItems(cartItems.filter((x) => x.key !== product.key));
+		} else {
+			setCartItems(
+				cartItems.map((x) =>
+					x.key === product.key ? { ...exist, qty: exist.qty - 1 } : x
+				)
+			);
+		}
+	};
+
 	return (
 		<div>
 			<button className="veg" onClick={handleClick}>
@@ -30,8 +57,8 @@ function App() {
 			<button className="nonveg" onClick={handleClick}>
 				Non-Vegetarian
 			</button>
-			<NonVeg isGreen={isGreen} />
-			<Veg isGreen={isGreen} />
+			<NonVeg isGreen={isGreen} onAdd={onAdd} onRemove={onRemove} />
+			<Veg isGreen={isGreen} onAdd={onAdd} onRemove={onRemove} />
 			<>
 				<button
 					className="confirm"
@@ -42,7 +69,11 @@ function App() {
 				>
 					Confirm Order
 				</button>
-				<ConfirmOrder open={isOpen} onClose={() => setIsOpen(false)} />
+				<ConfirmOrder
+					open={isOpen}
+					onClose={() => setIsOpen(false)}
+					cartItems={cartItems}
+				/>
 			</>
 		</div>
 	);

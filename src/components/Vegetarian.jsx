@@ -3,16 +3,18 @@ import vdishes from "../vegetarian";
 import MenuItem from "./MenuItem";
 
 function Veg(props) {
+	const { products } = vdishes;
+	const { isGreen, onAdd, onRemove } = props;
 	return (
-		<div style={{ backgroundColor: "#26de81" }}>
-			{props.isGreen && (
+		<div style={{ backgroundColor: "#16a085" }}>
+			{isGreen && (
 				<div className="menuItems">
-					{vdishes.map((item) => (
+					{products.map((item) => (
 						<MenuItem
 							key={item.key}
-							dish={item.dish}
-							price={item.price}
-							// qty={item.quantity}
+							item={item}
+							onAdd={onAdd}
+							onRemove={onRemove}
 						/>
 					))}
 				</div>

@@ -3,12 +3,19 @@ import nvdishes from "../nonvegetarian";
 import MenuItem from "./MenuItem";
 
 function NonVeg(props) {
+	const { products } = nvdishes;
+	const { isGreen, onAdd, onRemove } = props;
 	return (
-		<div style={{ backgroundColor: "#fc5c65" }}>
-			{!props.isGreen && (
+		<div style={{ backgroundColor: "#bd574e" }}>
+			{!isGreen && (
 				<div className="menuItems">
-					{nvdishes.map((item) => (
-						<MenuItem key={item.key} dish={item.dish} price={item.price} />
+					{products.map((item) => (
+						<MenuItem
+							key={item.key}
+							item={item}
+							onAdd={onAdd}
+							onRemove={onRemove}
+						/>
 					))}
 				</div>
 			)}
