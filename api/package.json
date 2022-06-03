@@ -1,0 +1,25 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "server for food-order-web-app",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/agarwalharshal/food-ordering-web-app.git"
+  },
+  "author": "Harshal Agarwal",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/agarwalharshal/food-ordering-web-app/issues"
+  },
+  "homepage": "https://github.com/agarwalharshal/food-ordering-web-app#readme",
+  "dependencies": {
+    "body-parser": "^1.20.0",
+    "express": "^4.18.1",
+    "mongoose": "^6.3.5"
+  }
+}

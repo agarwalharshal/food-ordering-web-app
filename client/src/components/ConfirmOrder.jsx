@@ -44,15 +44,19 @@ function ConfirmOrder(props) {
 						)}
 					</p>
 				</div>
-				<button
-					className="place"
-					onClick={onClose}
-					onMouseOver={handleOver}
-					onMouseOut={handleOut}
-					style={{ backgroundColor: isOver ? "#fa8231" : "#fd9644" }}
-				>
-					Place Order
-				</button>
+				<form formAction="index.html" formMethod="post">
+					<button
+						name="placeOrder"
+						value={cartItems}
+						className="place"
+						onClick={onClose}
+						onMouseOver={handleOver}
+						onMouseOut={handleOut}
+						style={{ backgroundColor: isOver ? "#fa8231" : "#fd9644" }}
+					>
+						Place Order
+					</button>
+				</form>
 			</div>
 		</>,
 		document.getElementById("portal")
